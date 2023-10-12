@@ -1,3 +1,4 @@
+import { TodoUpdateDTO, TodoWriteDTO } from '../../dto/todo.dto';
 import { TodoEntity } from '../entities/todo.entity';
 
 export abstract class TodoRepository {
