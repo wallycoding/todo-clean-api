@@ -5,7 +5,5 @@ import { TodoModule } from './modules/todo/todo.module';
 
 @Module({
   imports: [PrismaModule, TodoModule],
-  controllers: [],
-  providers: [PrismaService],
 })
 export class AppModule {}
