@@ -27,18 +27,18 @@ export class PrismaAdapter implements TodoRepository {
   add(data: TodoWriteDTO): Promise<TodoEntity> {
     return this.prisma.todo.create({ data });
   }
-  update(id: string, data: TodoUpdateDTO): Promise<TodoEntity> {
-    const todo = this.getById(id);
+  async update(id: string, data: TodoUpdateDTO): Promise<TodoEntity> {
+    const todo = await this.getById(id);
     if (!todo) return;
-    return this.prisma.todo.update({
+    return await this.prisma.todo.update({
       where: { id },
       data,
     });
   }
-  remove(id: string): Promise<TodoEntity> {
-    const todo = this.getById(id);
+  async remove(id: string): Promise<TodoEntity> {
+    const todo = await this.getById(id);
     if (!todo) return;
-    return this.prisma.todo.delete({
+    return await this.prisma.todo.delete({
       where: { id },
     });
   }
