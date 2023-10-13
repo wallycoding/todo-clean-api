@@ -33,7 +33,7 @@
       - [x] Test todo service
       - [x] Todo Service
     - Controllers
-      - [ ] Test todo controller
-      - [ ] todo controller
+      - [x] Test todo controller
+      - [x] todo controller
   - Tests
     - [ ] Test e2e
