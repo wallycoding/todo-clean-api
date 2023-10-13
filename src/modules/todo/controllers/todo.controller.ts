@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -14,7 +15,7 @@ import { TodoWriteDTO, TodoUpdateDTO } from '../dto/todo.dto';
 import { TodoService } from '../services/todo.service';
 
 type QueryByPage = {
-  page?: number;
+  page?: string | number;
 };
 
 type ParamId = {
@@ -26,8 +27,10 @@ export class TodoController {
   constructor(private todoService: TodoService) {}
 
   @Get('list')
-  getMany(@Query() query: QueryByPage): Promise<TodoEntity[]> {
-    return this.todoService.getMany(query.page);
+  async getMany(@Query() query: QueryByPage): Promise<TodoEntity[]> {
+    const page = typeof query.page === 'undefined' ? 0 : +query.page;
+    if (isNaN(page)) throw new BadRequestException('Invalid page argument');
+    return await this.todoService.getMany(page);
   }
   @Get(':id')
   async getById(@Param() param: ParamId): Promise<TodoEntity> {
