@@ -30,8 +30,8 @@
       - [x] Test prisma adapter
       - [x] Prisma adapter
     - Services
-      - [ ] Test todo service
-      - [ ] Todo Service
+      - [x] Test todo service
+      - [x] Todo Service
     - Controllers
       - [ ] Test todo controller
       - [ ] todo controller
