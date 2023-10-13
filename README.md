@@ -17,18 +17,18 @@
      - [x] Cors
      - [x] Swagger
   - Prisma Service
-    - [ ] Test prisma 
-    - [ ] Prisma service
+    - [x] Test prisma 
+    - [x] Prisma service
   - Domain
-    - [ ] Entities
-    - [ ] Repository
+    - [x] Entities
+    - [x] Repository
   - DTO
-    - [ ] Test (Write todo & update todo)
-    - [ ] Write todo & update todo
+    - [x] Test (Write todo & update todo)
+    - [x] Write todo & update todo
   - Todo  
     - Data
-      - [ ] Test prisma adapter
-      - [ ] Prisma adapter
+      - [x] Test prisma adapter
+      - [x] Prisma adapter
     - Services
       - [ ] Test todo service
       - [ ] Todo Service
