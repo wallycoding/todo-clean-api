@@ -147,6 +147,7 @@ describe('PrismaService', () => {
     });
     it('should return undefined when attempting to update a non-existent todo by id', async () => {
       const invalidId = 'invalid_id';
+      mockPrismaService.todo.findUnique.mockResolvedValue(undefined);
       const data = await service.update(invalidId, { content: 'valid' });
 
       expect(data).toBeUndefined();
@@ -175,6 +176,7 @@ describe('PrismaService', () => {
     });
     it('should return undefined when attempting to delete a non-existent todo by id', async () => {
       const invalidId = 'invalid_id';
+      mockPrismaService.todo.findUnique.mockResolvedValue(undefined);
       const data = await service.remove(invalidId);
 
       expect(data).toBeUndefined();
