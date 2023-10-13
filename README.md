@@ -36,4 +36,4 @@
       - [x] Test todo controller
       - [x] todo controller
   - Tests
-    - [ ] Test e2e
+    - [x] Test e2e
