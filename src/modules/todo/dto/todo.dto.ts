@@ -20,11 +20,11 @@ export class TodoUpdateDTO {
   @ValidateIf((o) => typeof o.done === 'undefined')
   @IsNotEmpty()
   @Length(3, 1000)
-  content: string;
+  content?: string;
 
   @ApiProperty()
   @ValidateIf((o) => typeof o.content === 'undefined')
   @IsNotEmpty()
   @IsBoolean()
-  done: boolean;
+  done?: boolean;
 }
