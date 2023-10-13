@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TodoController } from './todo.controller';
 import { TodoService } from '../services/todo.service';
 import { createFakeTodo } from '../test-utils/todo.utils';
-import { NotFoundException } from '@nestjs/common';
+import { BadRequestException, NotFoundException } from '@nestjs/common';
 
 const createMockTodoService = () => ({
   getMany: jest.fn(),
@@ -53,6 +53,14 @@ describe('TodoController', () => {
       expect(data).toEqual([fakeTodo]);
       expect(mockTodoRepository.getMany).toBeCalledTimes(1);
     });
+    it("should return a 'bad request' when passing invalid page", async () => {
+      const errorData = await controller
+        .getMany({ page: 'invalid_data' })
+        .catch((err) => err);
+      expect(errorData instanceof BadRequestException).toBeTruthy();
+      expect(mockTodoRepository.getMany).toBeCalledTimes(0);
+    });
+
     it('should return 3 items per pagination in descending order', async () => {
       const ITEMS_PER_PAGE = 3;
       const allFakeTodos = Array.from({ length: 9 }, (_, i) =>
