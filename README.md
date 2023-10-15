@@ -133,7 +133,7 @@ $ npm run test:cov
 
 ![Tests e2e](docs/images/test_e2e.png)
 
-## Patterns
+## Patterns and paradigms
 
 - (OOP) Object-Oriented Programming
 - (TDD) Test-Driven Development
