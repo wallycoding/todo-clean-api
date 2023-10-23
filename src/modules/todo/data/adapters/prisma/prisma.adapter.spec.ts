@@ -128,7 +128,7 @@ describe('PrismaService', () => {
       mockPrismaService.todo.findUnique.mockResolvedValue(fakeTodo);
 
       for (const body of validBodies) {
-        const fakeTodoUpdated = { ...fakeTodo, ...validBodies };
+        const fakeTodoUpdated = { ...fakeTodo, ...body };
         mockPrismaService.todo.update.mockResolvedValue(fakeTodoUpdated);
         const data = await service.update(fakeTodo.id, body);
 
