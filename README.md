@@ -1,5 +1,9 @@
 # Todo Clean API
 
+## Live Coding
+
+Watch the video of this project [here](https://www.youtube.com/watch?v=MamMJN3Id20&list=PLK1jKi8yA3wEAyePsorYWp_84IK2z6jim)
+
 ## Running the containers
 
 ```bash
